@@ -85,11 +85,16 @@ Extra accent colors in project palettes remain (amber, ocean, violet, jade).
 - [x] Git: repo created at github.com/Abhaydeep1410/portfolio, 5 logical commits (real dates, not backdated), pushed to `main`
 - [x] User advised on deployment (Vercel recommended: build `npm run build`, output `dist`)
 
+- [x] Mobile fixes (31 Oct 2026), tested with Playwright at 390px: `html{font-size:87.5%}` under 640px (scales all rem text/cards), smaller section headings,
+      hero name and project titles; narrower project/episode/continue cards; smaller achievement/top-pick/skills cards;
+      resume sheet is always 2 columns (compact type) with no collapse teaser; resume modal scroll fixed (`h-[100dvh]`, `min-h-0` on flex child,
+      `overscroll-contain`, `touch-action: pan-y`). Decision: do NOT force the desktop view on phones.
+- [x] Removed leftover template text: hero chips/badge (now "2+ years experience", "Java · Spring Boot", "BACKEND"), About facts, Projects heading/description
+      (heading is now "PROJECTS"), S01-S0N badge uses seasons.length, ContinueWatching glyph.
+
 ## 8. Pending / ideas
 
-- [ ] **Mobile layout polish** (user reports mobile view "doesn't look good"). Ask for phone screenshots + device/browser. Likely fixes: hero text size and floating chips,
-      lighter effects on mobile (grain, light streaks, particles), navbar size, skills grid and timeline spacing, no horizontal overflow.
-      Decision: do NOT force the desktop view on phones; fix the responsive layout.
+- [ ] Mobile polish round 2 (optional): lighter effects on phones (grain, streaks, particles), navbar size. Verify on a real phone.
 - [ ] Add `github` links for MediShop and SpecIt in `projects` (user must give URLs); optionally architecture diagrams / READMEs for them
 - [ ] Deploy (Vercel) and add the live URL to README, GitHub repo "Website" field, LinkedIn, resume
 - [ ] Add `docs/screenshot.png` and uncomment the screenshot line in README

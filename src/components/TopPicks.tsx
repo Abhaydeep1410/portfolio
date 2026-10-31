@@ -15,7 +15,7 @@ export default function TopPicks() {
           {topPicks.map((pick, i) => (
             <motion.div
               key={pick.title}
-              className="group relative flex h-[260px] shrink-0 snap-start items-end sm:h-[300px]"
+              className="group relative flex h-[210px] shrink-0 snap-start items-end sm:h-[300px]"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '0px -5% 0px 0px' }}
@@ -28,7 +28,7 @@ export default function TopPicks() {
               >
                 {i + 1}
               </span>
-              <div className="relative z-10 h-[85%] w-[150px] overflow-hidden rounded-lg shadow-[-12px_0_30px_rgba(0,0,0,0.7)] ring-1 ring-white/10 transition duration-500 group-hover:-translate-y-2 group-hover:ring-white/30 sm:w-[180px]">
+              <div className="relative z-10 h-[85%] w-[120px] overflow-hidden rounded-lg shadow-[-12px_0_30px_rgba(0,0,0,0.7)] ring-1 ring-white/10 transition duration-500 group-hover:-translate-y-2 group-hover:ring-white/30 sm:w-[180px]">
                 <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
                   <PosterBackdrop palette={pick.palette} />
                 </div>

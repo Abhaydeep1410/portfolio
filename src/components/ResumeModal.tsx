@@ -19,7 +19,7 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[140] flex flex-col bg-black/90 backdrop-blur-md"
+      className="fixed inset-x-0 top-0 z-[140] flex h-[100dvh] flex-col overflow-hidden bg-black/90 backdrop-blur-md"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -28,7 +28,7 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
       aria-label="Resume"
     >
       <div className="gutter flex h-16 shrink-0 items-center justify-between gap-3 pt-[env(safe-area-inset-top)]">
-        <p className="truncate font-display text-2xl tracking-wide text-bone">The Full Story</p>
+        <p className="truncate font-display text-2xl tracking-wide text-bone">Resume</p>
         <div className="flex items-center gap-2">
           <a href={profile.resumePdf} download="Abhay_Deep_Resume.pdf" className="rounded-md bg-bone px-4 py-2 text-xs font-bold text-ink">
             ⤓ Download
@@ -39,13 +39,13 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
         </div>
       </div>
       <motion.div
-        className="gutter flex-1 pb-6"
+        className="gutter min-h-0 flex-1 pb-4"
         initial={{ opacity: 0, y: 40, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.6, ease: EASE }}
       >
         {small ? (
-          <div data-lenis-prevent className="h-full overflow-y-auto">
+          <div data-lenis-prevent className="h-full min-h-0 overflow-y-auto overscroll-contain pb-[env(safe-area-inset-bottom)] [-webkit-overflow-scrolling:touch]" style={{ touchAction: 'pan-y' }}>
             <ResumeSheet />
             <a href={profile.resumePdf} target="_blank" rel="noreferrer" className="glass mt-4 flex min-h-12 items-center justify-center rounded-md text-sm font-semibold text-bone">
               Open original PDF ↗

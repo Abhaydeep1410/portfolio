@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { achievements, certifications, education, experience, profile, projects, skillCategories } from '../data/portfolio';
 import { EASE, Magnetic, SectionHeading } from './fx';
@@ -64,23 +63,8 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
   );
 }
 
-/** On phones the sheet starts as a teaser so the page keeps its pace; desktop shows it in full. */
 function CollapsibleSheet() {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="relative">
-      <div className={`overflow-hidden transition-[max-height] duration-700 ease-[var(--ease-cine)] md:max-h-none ${open ? 'max-h-[4000px]' : 'max-h-[560px]'}`}>
-        <ResumeSheet />
-      </div>
-      {!open && (
-        <div className="absolute inset-x-0 bottom-0 flex h-48 items-end justify-center rounded-b-2xl bg-gradient-to-t from-ink via-ink/85 to-transparent pb-4 md:hidden">
-          <button type="button" onClick={() => setOpen(true)} className="glass min-h-11 rounded-full px-5 text-sm font-semibold text-bone">
-            Read the full story ↓
-          </button>
-        </div>
-      )}
-    </div>
-  );
+  return <ResumeSheet />;
 }
 
 function H({ children }: { children: string }) {
@@ -89,14 +73,14 @@ function H({ children }: { children: string }) {
 
 export function ResumeSheet() {
   return (
-    <article className="relative overflow-hidden rounded-2xl bg-[linear-gradient(180deg,#121218,#0c0c11)] p-6 ring-1 ring-white/10 sm:p-10">
+    <article className="relative overflow-hidden rounded-2xl bg-[linear-gradient(180deg,#121218,#0c0c11)] p-4 ring-1 ring-white/10 sm:p-8 md:p-10">
       <div aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-crimson-2/70 to-transparent" />
-      <header className="mb-8 flex flex-wrap items-end justify-between gap-4 border-b border-white/10 pb-6">
+      <header className="mb-5 flex flex-wrap sm:mb-8 items-end justify-between gap-4 border-b border-white/10 pb-4 sm:pb-6">
         <div>
           <p className="text-[10px] font-bold tracking-[0.34em] text-smoke">STARRING</p>
-          <h3 className="mt-1 font-display text-[clamp(1.9rem,4.4vw,3.2rem)] leading-[0.9] tracking-wide text-bone">{profile.fullName}</h3>
+          <h3 className="mt-1 font-display text-[clamp(1.5rem,4.4vw,3.2rem)] leading-[0.9] tracking-wide text-bone">{profile.fullName}</h3>
         </div>
-        <div className="text-xs leading-relaxed text-mist sm:text-right">
+        <div className="text-[10px] sm:text-xs leading-relaxed text-mist sm:text-right">
           <a href={`mailto:${profile.email}`} className="block hover:text-bone">
             {profile.email}
           </a>
@@ -110,18 +94,18 @@ export function ResumeSheet() {
         </div>
       </header>
 
-      <div className="grid gap-x-10 md:grid-cols-[1.4fr_1fr]">
+      <div className="grid grid-cols-[1.4fr_1fr] gap-x-4 sm:gap-x-10">
         <div>
           <H>Education</H>
           {education.map((e) => (
             <div key={e.school} className="mb-4">
               <div className="flex flex-wrap justify-between gap-x-3">
-                <p className="text-sm font-semibold text-bone">
+                <p className="text-xs font-semibold sm:text-sm text-bone">
                   {e.school}, {e.place}
                 </p>
-                <p className="text-xs text-smoke">{e.period}</p>
+                <p className="text-[10px] sm:text-xs text-smoke">{e.period}</p>
               </div>
-              <p className="text-xs text-mist">
+              <p className="text-[10px] sm:text-xs text-mist">
                 {e.degree} · <span className="text-bone/80">{e.score}</span>
               </p>
             </div>
@@ -129,16 +113,16 @@ export function ResumeSheet() {
 
           <H>Work Experience</H>
           {experience.map((x) => (
-            <div key={x.company}>
+            <div key={x.company} className="mb-4">
               <div className="flex flex-wrap justify-between gap-x-3">
-                <p className="text-sm font-semibold text-bone">
+                <p className="text-xs font-semibold sm:text-sm text-bone">
                   {x.company} — {x.role}
                 </p>
-                <p className="text-xs text-smoke">{x.period}</p>
+                <p className="text-[10px] sm:text-xs text-smoke">{x.period}</p>
               </div>
               <ul className="mt-2 space-y-1.5">
                 {x.points.map((p) => (
-                  <li key={p} className="flex gap-2 text-xs leading-relaxed text-mist">
+                  <li key={p} className="flex gap-2 text-[10px] sm:text-xs leading-relaxed text-mist">
                     <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-crimson-2" />
                     {p}
                   </li>
@@ -151,10 +135,10 @@ export function ResumeSheet() {
           {projects.map((p) => (
             <div key={p.id} className="mb-3">
               <div className="flex flex-wrap justify-between gap-x-3">
-                <p className="text-sm font-semibold text-bone">{p.title}</p>
-                <p className="text-xs text-smoke">{p.year}</p>
+                <p className="text-xs font-semibold sm:text-sm text-bone">{p.title}</p>
+                <p className="text-[10px] sm:text-xs text-smoke">{p.year}</p>
               </div>
-              <p className="text-xs text-mist">{p.stack.join(', ')}</p>
+              <p className="text-[10px] sm:text-xs text-mist">{p.stack.join(', ')}</p>
             </div>
           ))}
         </div>
@@ -163,7 +147,7 @@ export function ResumeSheet() {
           <H>Skills</H>
           <div className="space-y-2">
             {skillCategories.map((c) => (
-              <p key={c.id} className="text-xs leading-relaxed text-mist">
+              <p key={c.id} className="text-[10px] sm:text-xs leading-relaxed text-mist">
                 <span className="font-semibold text-bone">{c.title}: </span>
                 {c.skills.map((s) => s.name).join(', ')}
               </p>
@@ -173,7 +157,7 @@ export function ResumeSheet() {
           <H>Achievements</H>
           <ul className="space-y-2">
             {achievements.map((a) => (
-              <li key={a.id} className="text-xs leading-relaxed text-mist">
+              <li key={a.id} className="text-[10px] sm:text-xs leading-relaxed text-mist">
                 <span className="font-semibold text-bone">
                   {a.title} — {a.org}.
                 </span>{' '}
@@ -183,7 +167,7 @@ export function ResumeSheet() {
           </ul>
 
           <H>Certifications</H>
-          <p className="text-xs leading-relaxed text-mist">
+          <p className="text-[10px] sm:text-xs leading-relaxed text-mist">
             {Array.from(new Set(certifications.map((c) => c.issuer)))
               .map((iss) => `${iss}: ${certifications.filter((c) => c.issuer === iss).map((c) => c.name).join(', ')}`)
               .join(' · ')}

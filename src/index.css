@@ -152,3 +152,10 @@ a:focus-visible {
     display: none;
   }
 }
+
+/* Phones: scale the whole rem-based UI down ~12% so text and cards fit comfortably */
+@media (max-width: 639px) {
+  html {
+    font-size: 87.5%;
+  }
+}

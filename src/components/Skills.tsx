@@ -37,7 +37,7 @@ export default function Skills() {
         </div>
 
         {/* skill cards */}
-        <div className="min-h-[340px]">
+        <div className="min-h-[260px] sm:min-h-[340px]">
           <AnimatePresence mode="wait">
             <motion.div key={category.id} initial="hidden" animate="show" exit="exit" transition={{ staggerChildren: 0.05 }}>
               <motion.p
