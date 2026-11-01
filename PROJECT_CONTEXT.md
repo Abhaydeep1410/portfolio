@@ -97,6 +97,11 @@ Extra accent colors in project palettes remain (amber, ocean, violet, jade).
 - [x] Fixed sideways page overflow on phones (project rail used `x: 60` entry animation): now `y: 40`, plus global `html, body { overflow-x: clip }`.
       Test note: Playwright `is_mobile` shows the overflow as innerWidth > 390; a preview server must be started in the same command as the test.
 
+- [x] Resume updated again (file `Resume_abhay.pdf`): new summary, 7 Accenture bullets (N+1 / caching, 500+ ms to <300 ms, SonarQube, AI tools API Comparator + DraftFlow),
+- [x] Latest resume (`Resume_abhay_1.pdf`) only added **Kubernetes** to Cloud & DevOps: skill added, PDF replaced.
+      4 Newgen bullets. Correction: **NPTEL Silver Medal (Top 5%)** and **3rd rank at AKTU** are two separate achievements (earlier data wrongly merged them).
+      Live site: https://abhay-portfolio-topaz-delta.vercel.app/ (deployed on Vercel). Resume PDF in `public/assets/` replaced.
+
 ## 8. Pending / ideas
 
 - [ ] Mobile polish round 2 (optional): lighter effects on phones (grain, streaks, particles), navbar size. Verify on a real phone.

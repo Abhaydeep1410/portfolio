@@ -16,7 +16,7 @@ export const profile = {
   role: 'Java Backend Engineer',
   tagline: ['Java', 'Spring Boot', 'Microservices'],
   intro:
-    'Software Engineer with 2+ years of experience building scalable Java backend systems with Spring Boot, Microservices, Kafka and AWS. Skilled in REST APIs, distributed systems and software engineering best practices.',
+    'Software Engineer with 2+ years of experience building Java-based backend systems with Spring Boot, microservices and Kafka. Experienced in distributed systems, performance optimization, cloud deployments and AI-powered developer productivity tools.',
   location: 'Pune, Maharashtra',
   availability: 'Open to Java backend roles · Pune / remote',
   email: 'abhay14d@gmail.com',
@@ -30,7 +30,7 @@ export const profile = {
     srcSet: '/assets/portrait-420.webp 420w, /assets/portrait-720.webp 720w, /assets/portrait-1100.webp 1100w',
     alt: 'Portrait of Abhay Deep',
   },
-  interests: ['Distributed Systems', 'System Design (LLD / HLD)', 'Cloud (AWS)'],
+  interests: ['Distributed Systems', 'Performance Optimization', 'AI-powered Developer Tools'],
 };
 
 export const education = [
@@ -50,11 +50,13 @@ export const experience = [
     place: 'Pune, Maharashtra',
     period: 'Jul 2024 – Present',
     points: [
-      'Developed 3 Spring Boot microservices and 30+ REST APIs for a UK banking client’s business and corporate card servicing platform using Oracle Database.',
-      'Developed frontend features using React and implemented security using Spring Security, JWT, OAuth2, and mTLS.',
-      'Integrated Kafka for asynchronous communication across microservices.',
-      'Resolved production issues, optimized API response times, and deployed applications on OpenShift using Docker, GitLab CI, and Jenkins.',
-      'Developed unit and integration tests using JUnit and Mockito, maintaining 85%+ code coverage.',
+      'Developed and enhanced 3 Spring Boot microservices and 30+ REST APIs for a UK banking client’s business and corporate card servicing platform, integrating backend services with Oracle Database.',
+      'Implemented backend business logic and React frontend features, securing REST endpoints using Spring Security, JWT, OAuth2, and mTLS.',
+      'Implemented Apache Kafka producers and consumers for asynchronous inter-service communication, enabling decoupled message processing across microservices.',
+      'Investigated and resolved production defects through application log analysis and backend debugging; optimized Oracle SQL queries, joins, and indexing.',
+      'Analyzed VPT results to identify performance bottlenecks; optimized 3-4 REST APIs by resolving N+1 queries, reducing unnecessary database calls, and implementing caching, bringing response times from 500+ ms to under 300 ms.',
+      'Configured and troubleshot application deployments on OpenShift using Docker, GitLab CI, and Jenkins; developed JUnit and Mockito tests, maintaining 85%+ code coverage reported through SonarQube.',
+      'Built AI-powered productivity tools including an API Comparator and DraftFlow, automating documentation, presentations, website, and backend code generation.',
     ],
   },
   {
@@ -63,10 +65,10 @@ export const experience = [
     place: 'Noida, Uttar Pradesh',
     period: 'Jan 2024 – Jun 2024',
     points: [
-      'Developed backend features using Java, Spring Boot, and SQL for a Saudi Arabian banking client.',
-      'Refactored monolithic modules into microservices, improving response time by 25%.',
-      'Designed and documented REST APIs following OpenAPI standards for service integration.',
-      'Contributed to AWS-based deployments and integration of microservices.',
+      'Migrated legacy Servlet-based APIs to Java Spring Boot for a banking client, modernizing backend services.',
+      'Investigated and resolved production defects involving SQL, PL/SQL, and database issues.',
+      'Worked on Newgen iForm and designed REST APIs following OpenAPI standards for service integration.',
+      'Contributed to monolith-to-microservices migration, improving response time by 25%, and supported AWS-based deployments.',
     ],
   },
 ];
@@ -157,7 +159,7 @@ export const achievements: Achievement[] = [
     id: 'leetcode',
     title: 'LeetCode Knight',
     org: 'LeetCode',
-    detail: 'Solved 800+ DSA problems and earned the Knight badge.',
+    detail: 'Solved 800+ DSA problems and achieved LeetCode Knight rank.',
     laurel: 'Knight',
     link: ACH_DRIVE,
   },
@@ -170,19 +172,19 @@ export const achievements: Achievement[] = [
     link: ACH_DRIVE,
   },
   {
-    id: 'honours',
-    title: 'Silver Medal',
-    org: 'AKTU University',
-    detail: 'Graduated B.Tech with Honours and secured 3rd rank in the university.',
-    laurel: 'Silver Medal',
+    id: 'nptel',
+    title: 'NPTEL Silver Medal',
+    org: 'NPTEL · IIT Madras',
+    detail: 'Earned an NPTEL Silver Medal, placing in the top 5%.',
+    laurel: 'Top 5%',
     link: ACH_DRIVE,
   },
   {
-    id: 'nptel',
-    title: 'Top 5% Nationwide',
-    org: 'NPTEL · IIT Madras',
-    detail: 'Ranked in the top 5% nationwide in NPTEL IIT Madras examinations.',
-    laurel: 'Top 5%',
+    id: 'aktu',
+    title: '3rd Rank',
+    org: 'AKTU University',
+    detail: 'Secured 3rd rank at AKTU University and graduated B.Tech with Honours.',
+    laurel: '3rd Rank',
     link: ACH_DRIVE,
   },
 ];
@@ -247,6 +249,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'AWS', mono: 'Aw' },
       { name: 'Docker', mono: 'Dk' },
+      { name: 'Kubernetes', mono: 'K8' },
       { name: 'OpenShift', mono: 'Os' },
       { name: 'Git', mono: 'Gt' },
       { name: 'GitLab', mono: 'Gl' },
@@ -283,7 +286,7 @@ export const skillCategories: SkillCategory[] = [
 export const skillEvidence: Record<string, string[]> = {
   Java: ['Accenture', 'Newgen Software', 'MediShop', 'SpecIt'],
   'C++': ['800+ DSA problems solved'],
-  SQL: ['Newgen Software'],
+  SQL: ['Accenture', 'Newgen Software'],
   'Spring Boot': ['Accenture', 'Newgen Software', 'MediShop', 'SpecIt'],
   'Spring Security': ['Accenture'],
   Microservices: ['Accenture', 'Newgen Software', 'MediShop'],
@@ -355,8 +358,8 @@ export const seasons: Season[] = [
         code: 'S01 E02',
         title: 'Top of the Class',
         subtitle: 'AKTU University · NPTEL IIT Madras',
-        details: ['Silver Medal for securing 3rd rank in AKTU University.', 'Ranked in the top 5% nationwide in NPTEL IIT Madras examinations.'],
-        description: 'Silver Medal for 3rd rank in AKTU University, and top 5% nationwide in NPTEL IIT Madras exams.',
+        details: ['Earned an NPTEL Silver Medal (top 5%).', 'Secured 3rd rank at AKTU University.'],
+        description: 'NPTEL Silver Medal (top 5%) and 3rd rank at AKTU University.',
         tags: ['AKTU', 'NPTEL'],
         runtime: '2020 – 2024',
         palette: amber,
@@ -374,8 +377,8 @@ export const seasons: Season[] = [
         title: 'The Internship',
         subtitle: `${experience[1].role} · ${experience[1].company} · ${experience[1].place}`,
         details: experience[1].points,
-        description: 'Backend features for a Saudi Arabian banking client; refactored monolith modules into microservices for a 25% faster response time.',
-        tags: ['Java', 'Spring Boot', 'AWS'],
+        description: 'Migrated legacy Servlet APIs to Spring Boot for a banking client and helped move a monolith to microservices, improving response time by 25%.',
+        tags: ['Java', 'Spring Boot', 'SQL', 'AWS'],
         runtime: 'Jan 2024 – Jun 2024 · Newgen Software',
         palette: violet,
       },
@@ -384,8 +387,8 @@ export const seasons: Season[] = [
         title: 'Banking at Scale',
         subtitle: `${experience[0].role} · ${experience[0].company} · ${experience[0].place}`,
         details: experience[0].points,
-        description: '3 Spring Boot microservices and 30+ REST APIs for a UK banking client’s corporate card servicing platform.',
-        tags: ['Kafka', 'Spring Security', 'OpenShift'],
+        description: '3 Spring Boot microservices and 30+ REST APIs for a UK banking client, with API response times cut from 500+ ms to under 300 ms.',
+        tags: ['Kafka', 'Performance', 'OpenShift', 'AI tools'],
         runtime: 'Jul 2024 – Present · Accenture',
         palette: teal,
       },
@@ -431,9 +434,9 @@ export const topPicks: TopPick[] = [
   { label: 'The distributed Original', title: 'MediShop', detail: 'Gateway • Eureka • Kafka • Redis', palette: jade },
   { label: 'Problems solved', title: '800+', detail: 'DSA problems • LeetCode Knight', palette: teal },
   { label: 'Contest rank', title: 'AIR 660', detail: 'CodeKaze', palette: amber },
-  { label: 'Code quality', title: '85%+', detail: 'Test coverage with JUnit & Mockito', palette: ocean },
+  { label: 'Code quality', title: '85%+', detail: 'Test coverage • JUnit, Mockito, SonarQube', palette: ocean },
   { label: 'Cloud credential', title: 'AWS Certified', detail: 'Cloud Practitioner', palette: jade },
-  { label: 'Academic high', title: 'Silver Medal', detail: '3rd rank in AKTU • 8.9 CGPA', palette: violet },
+  { label: 'Performance', title: '<300 ms', detail: 'API response time, down from 500+ ms', palette: violet },
 ];
 
 /** Slides for the "▶ Play Intro" cinematic sequence. */
@@ -455,7 +458,7 @@ export const introSlides: IntroSlide[] = [
   {
     kicker: 'Experience',
     title: 'Banking at scale',
-    lines: ['Software Engineer · Accenture · Jul 2024 – Present', '3 microservices · 30+ REST APIs · 85%+ test coverage'],
+    lines: ['Software Engineer · Accenture · Jul 2024 – Present', '3 microservices · 30+ REST APIs · API times from 500+ ms to under 300 ms'],
   },
   {
     kicker: 'Projects',
@@ -465,7 +468,7 @@ export const introSlides: IntroSlide[] = [
   {
     kicker: 'Achievements',
     title: 'Top Moments',
-    lines: ['LeetCode Knight · 800+ DSA problems', 'AIR 660 — CodeKaze', 'Silver Medal — AKTU University'],
+    lines: ['LeetCode Knight · 800+ DSA problems', 'AIR 660 — CodeKaze', 'NPTEL Silver Medal (Top 5%) · 3rd rank — AKTU'],
   },
   {
     kicker: 'Certified',
