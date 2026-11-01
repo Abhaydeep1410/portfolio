@@ -104,8 +104,8 @@ function RailOriginals({ onOpen }: { onOpen: (p: Project) => void }) {
       </div>
       <motion.div
         className="rail gutter flex snap-x snap-mandatory gap-4 overflow-x-auto pb-6"
-        initial={{ opacity: 0, x: 60 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.9, ease: EASE }}
       >

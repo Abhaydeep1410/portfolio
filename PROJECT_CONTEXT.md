@@ -92,6 +92,11 @@ Extra accent colors in project palettes remain (amber, ocean, violet, jade).
 - [x] Removed leftover template text: hero chips/badge (now "2+ years experience", "Java · Spring Boot", "BACKEND"), About facts, Projects heading/description
       (heading is now "PROJECTS"), S01-S0N badge uses seasons.length, ContinueWatching glyph.
 
+- [x] Experience cards are clickable: `EpisodeModal.tsx` (opened from `Seasons.tsx` via a portal to document.body, lazy-loaded). `Episode` has optional
+      `subtitle` and `details` (bullets, filled from `experience[]` / `projects[]` / education in `portfolio.ts`); `EpisodeCard` takes `onOpen` and is keyboard accessible.
+- [x] Fixed sideways page overflow on phones (project rail used `x: 60` entry animation): now `y: 40`, plus global `html, body { overflow-x: clip }`.
+      Test note: Playwright `is_mobile` shows the overflow as innerWidth > 390; a preview server must be started in the same command as the test.
+
 ## 8. Pending / ideas
 
 - [ ] Mobile polish round 2 (optional): lighter effects on phones (grain, streaks, particles), navbar size. Verify on a real phone.

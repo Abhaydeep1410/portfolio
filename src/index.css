@@ -159,3 +159,10 @@ a:focus-visible {
     font-size: 87.5%;
   }
 }
+
+/* Never allow sideways page scroll (animated or oversized elements can otherwise widen the page on phones).
+   `clip` (unlike `hidden`) keeps position: sticky working. */
+html,
+body {
+  overflow-x: clip;
+}

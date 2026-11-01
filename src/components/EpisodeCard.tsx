@@ -3,11 +3,22 @@ import type { Episode } from '../data/portfolio';
 import { EASE, Tilt } from './fx';
 import { PosterBackdrop } from './Poster';
 
-export default function EpisodeCard({ episode, index }: { episode: Episode; index: number }) {
+export default function EpisodeCard({ episode, index, onOpen }: { episode: Episode; index: number; onOpen: (e: Episode) => void }) {
   const [season, ep] = episode.code.split(' ');
   return (
     <motion.article
-      className="w-[72vw] shrink-0 snap-start sm:w-[52vw] md:w-[38vw] lg:w-[30vw] xl:w-[26vw]"
+      className="focus-ring w-[72vw] shrink-0 cursor-pointer snap-start rounded-xl sm:w-[52vw] md:w-[38vw] lg:w-[30vw] xl:w-[26vw]"
+      role="button"
+      tabIndex={0}
+      aria-label={`Open details: ${episode.title}`}
+      data-cursor="view"
+      onClick={() => onOpen(episode)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onOpen(episode);
+        }
+      }}
       initial={{ opacity: 0, y: 30, rotateY: -8 }}
       animate={{ opacity: 1, y: 0, rotateY: 0 }}
       transition={{ duration: 0.7, delay: index * 0.1, ease: EASE }}

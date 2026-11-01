@@ -310,6 +310,10 @@ export const skillEvidence: Record<string, string[]> = {
 export type Episode = {
   code: string;
   title: string;
+  /** Optional one-line context shown in the detail overlay (company · place, etc.). */
+  subtitle?: string;
+  /** Optional bullet list shown under "What I did" in the detail overlay. */
+  details?: string[];
   description: string;
   tags: string[];
   runtime: string;
@@ -340,6 +344,8 @@ export const seasons: Season[] = [
       {
         code: 'S01 E01',
         title: 'B.Tech, Computer Science',
+        subtitle: 'Ajay Kumar Garg Engineering College · Ghaziabad, Uttar Pradesh',
+        details: ['B.Tech in Computer Science, Aug 2020 – Jul 2024.', 'Finished with a CGPA of 8.9.', 'Graduated with Honours.'],
         description: 'Four years at AKGEC, finishing with an 8.9 CGPA and graduating with Honours.',
         tags: ['Computer Science', 'Honours'],
         runtime: 'Aug 2020 – Jul 2024',
@@ -348,6 +354,8 @@ export const seasons: Season[] = [
       {
         code: 'S01 E02',
         title: 'Top of the Class',
+        subtitle: 'AKTU University · NPTEL IIT Madras',
+        details: ['Silver Medal for securing 3rd rank in AKTU University.', 'Ranked in the top 5% nationwide in NPTEL IIT Madras examinations.'],
         description: 'Silver Medal for 3rd rank in AKTU University, and top 5% nationwide in NPTEL IIT Madras exams.',
         tags: ['AKTU', 'NPTEL'],
         runtime: '2020 – 2024',
@@ -364,6 +372,8 @@ export const seasons: Season[] = [
       {
         code: 'S02 E01',
         title: 'The Internship',
+        subtitle: `${experience[1].role} · ${experience[1].company} · ${experience[1].place}`,
+        details: experience[1].points,
         description: 'Backend features for a Saudi Arabian banking client; refactored monolith modules into microservices for a 25% faster response time.',
         tags: ['Java', 'Spring Boot', 'AWS'],
         runtime: 'Jan 2024 – Jun 2024 · Newgen Software',
@@ -372,6 +382,8 @@ export const seasons: Season[] = [
       {
         code: 'S02 E02',
         title: 'Banking at Scale',
+        subtitle: `${experience[0].role} · ${experience[0].company} · ${experience[0].place}`,
+        details: experience[0].points,
         description: '3 Spring Boot microservices and 30+ REST APIs for a UK banking client’s corporate card servicing platform.',
         tags: ['Kafka', 'Spring Security', 'OpenShift'],
         runtime: 'Jul 2024 – Present · Accenture',
@@ -388,6 +400,8 @@ export const seasons: Season[] = [
       {
         code: 'S03 E01',
         title: 'MediShop',
+        subtitle: 'Personal project',
+        details: projects[0].build,
         description: 'A distributed medical e-commerce platform with Kafka, Redis and a Spring Cloud stack.',
         tags: ['Microservices', 'Kafka', 'Docker'],
         runtime: '2025',
@@ -396,6 +410,8 @@ export const seasons: Season[] = [
       {
         code: 'S03 E02',
         title: 'SpecIt',
+        subtitle: 'Personal project',
+        details: projects[1].build,
         description: 'An AI-powered Spec → Plan → Tasks workflow for spec-driven development.',
         tags: ['AI APIs', 'PostgreSQL', 'Spring Boot'],
         runtime: '2025',

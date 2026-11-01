@@ -1,21 +1,25 @@
-import { useRef, useState } from 'react';
+import { lazy, Suspense, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { seasons } from '../data/portfolio';
+import { seasons, type Episode } from '../data/portfolio';
 import { EASE, SectionHeading } from './fx';
 import EpisodeCard from './EpisodeCard';
 import { RailButtons } from './Rail';
+
+const EpisodeModal = lazy(() => import('./EpisodeModal'));
 
 export default function Seasons() {
   const [active, setActive] = useState(seasons.length - 2);
   const season = seasons[active];
   const rail = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState<Episode | null>(null);
 
   return (
     <>
       <SectionHeading
         kicker="Education & career"
         title="Experience"
-        aside={<p className="max-w-xs text-sm text-mist">Every stage of the resume, told as a season — select one to see its episodes.</p>}
+        aside={<p className="max-w-xs text-sm text-mist">Every stage of the resume, told as a season — select one, then tap an episode for details.</p>}
       />
 
       {/* season selector */}
@@ -61,13 +65,19 @@ export default function Seasons() {
           <div className="group/rail relative">
             <div ref={rail} className="rail gutter flex snap-x snap-mandatory gap-4 overflow-x-auto py-8 [perspective:1200px]">
               {season.episodes.map((e, i) => (
-                <EpisodeCard key={e.code} episode={e} index={i} />
+                <EpisodeCard key={e.code} episode={e} index={i} onOpen={setOpen} />
               ))}
             </div>
             <RailButtons rail={rail} />
           </div>
         </motion.div>
       </AnimatePresence>
+      {createPortal(
+        <Suspense fallback={null}>
+          <AnimatePresence>{open && <EpisodeModal key="episode" episode={open} onClose={() => setOpen(null)} />}</AnimatePresence>
+        </Suspense>,
+        document.body,
+      )}
     </>
   );
 }
